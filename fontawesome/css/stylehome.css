@@ -1,0 +1,10 @@
+@import url("stylesheet.css");
+body{
+    background-color: #EAEAEA;
+    font-family : 'Axiforma', sans-serif;
+    font-size : 14px;
+    color: #2D2D2D;
+    }
+.form-control{
+    width: 350px ;
+}
