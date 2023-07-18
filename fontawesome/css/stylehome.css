@@ -8,3 +8,16 @@ body{
 .form-control{
     width: 350px ;
 }
+.image-category{
+    width: 50px;
+}
+.image-category:hover{
+    transform: scale(1,2);
+}
+.row-container{
+    background-color: #FFF;
+    margin: 0px;
+}
+.card-hover{
+    border: 2px solid #2D2D2D;
+}
