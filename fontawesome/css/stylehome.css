@@ -18,6 +18,6 @@ body{
     background-color: #FFF;
     margin: 0px;
 }
-.card-hover{
+.card:hover{
     border: 2px solid #2D2D2D;
 }
