@@ -56,9 +56,16 @@ function redirectToWhatsApp(whatsappNumber, productName) {
     window.open(whatsappURL, '_blank');
 }
 
-// Fungsi untuk menampilkan model 3D dalam AR saat tombol "Show In 3D" ditekan
+// Function to show the AR content and hide other elements
 function showAR(modelUrl) {
     const arContent = document.getElementById('ar-content');
+    const arOverlay = document.getElementById('ar-overlay');
+    const productContainer = document.getElementById('product-container');
+    const footer = document.querySelector('footer');
+  
+    // Hide other elements
+    productContainer.style.display = 'none';
+    footer.style.display = 'none';
   
     // Remove existing models
     const existingModels = arContent.querySelectorAll('a-entity');
@@ -70,5 +77,28 @@ function showAR(modelUrl) {
     model.setAttribute('scale', '0.1 0.1 0.1'); // Sesuaikan skala model sesuai kebutuhan
     model.setAttribute('position', '0 0 -5'); // Sesuaikan posisi model sesuai kebutuhan
     arContent.appendChild(model);
+  
+    // Show the AR overlay
+    arOverlay.style.display = 'block';
   }
+  
+  // Function to hide the AR content and show other elements
+  function hideAR() {
+    const arContent = document.getElementById('ar-content');
+    const arOverlay = document.getElementById('ar-overlay');
+    const productContainer = document.getElementById('product-container');
+    const footer = document.querySelector('footer');
+  
+    // Hide the AR overlay
+    arOverlay.style.display = 'none';
+  
+    // Remove existing models
+    const existingModels = arContent.querySelectorAll('a-entity');
+    existingModels.forEach(model => model.parentNode.removeChild(model));
+  
+    // Show other elements
+    productContainer.style.display = 'block';
+    footer.style.display = 'block';
+  }
+  
   
