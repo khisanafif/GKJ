@@ -40,7 +40,7 @@ products.forEach(product => {
         <div class="product-image-container">
             <img src="${product.img}" alt="${product.name}" class="product-image" />
             <div class="hover-overlay">
-                <button class="ar-button" onclick="showAR('${product.arModel}')">Show In AR</button>
+            <button class="ar-button" onclick="loadModel('${product.arModel}')">Show In 3D</button>
                 <button class="buy-button" onclick="redirectToWhatsApp('${product.whatsappNumber}', '${product.name}')">Beli</button>
             </div>
         </div>
@@ -57,16 +57,31 @@ function redirectToWhatsApp(whatsappNumber, productName) {
 }
 
 // Fungsi untuk menampilkan model 3D saat tombol "Show AR" ditekan
-function showAR(modelUrl) {
-    const aScene = document.createElement('a-scene');
-    aScene.setAttribute('embedded', '');
-    aScene.innerHTML = `
-        <a-assets>
-            <a-asset-item id="model" src="${modelUrl}"></a-asset-item>
-        </a-assets>
-        <a-entity gltf-model="#model"></a-entity>
-    `;
+function loadModel(modelUrl) {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
 
-    const body = document.getElementsByTagName('body')[0];
-    body.appendChild(aScene);
+    const loader = new THREE.GLTFLoader();
+    loader.load(
+        modelUrl,
+        function (gltf) {
+            scene.add(gltf.scene);
+        },
+        undefined,
+        function (error) {
+            console.error('Error loading 3D model:', error);
+        }
+    );
+
+    camera.position.z = 5;
+
+    const animate = function () {
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
+    };
+
+    animate();
 }
