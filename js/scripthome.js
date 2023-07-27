@@ -58,11 +58,12 @@ function redirectToWhatsApp(whatsappNumber, productName) {
 
 // Fungsi untuk menampilkan model 3D saat tombol "Show AR" ditekan
 function loadModel(modelUrl) {
+    const canvasContainer = document.getElementById('canvas-container');
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, canvasContainer.clientWidth / canvasContainer.clientHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+    renderer.setSize(canvasContainer.clientWidth, canvasContainer.clientHeight);
+    canvasContainer.appendChild(renderer.domElement);
 
     const loader = new THREE.GLTFLoader();
     loader.load(
