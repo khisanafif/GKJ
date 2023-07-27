@@ -40,7 +40,7 @@ products.forEach(product => {
         <div class="product-image-container">
             <img src="${product.img}" alt="${product.name}" class="product-image" />
             <div class="hover-overlay">
-            <button class="ar-button" onclick="loadModel('${product.arModel}')">Show In 3D</button>
+                <button class="ar-button" onclick="loadModelAndShowAR('${product.arModel}')">Show In 3D</button>
                 <button class="buy-button" onclick="redirectToWhatsApp('${product.whatsappNumber}', '${product.name}')">Beli</button>
             </div>
         </div>
@@ -49,52 +49,83 @@ products.forEach(product => {
     productContainer.appendChild(card);
 });
 
-// Fungsi untuk mengarahkan ke WhatsAppa
+// Fungsi untuk mengarahkan ke WhatsApp
 function redirectToWhatsApp(whatsappNumber, productName) {
     const encodedMessage = encodeURIComponent(`Halo, Saya tertarik dengan ${productName}. Apakah masih tersedia?`);
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     window.open(whatsappURL, '_blank');
 }
 
-// Function to show the AR content and hide the website
-function showAR(modelUrl) {
-  const arContent = document.getElementById('ar-content');
-  const arOverlay = document.getElementById('ar-overlay');
-  const body = document.body;
+// Function to load the AR model and show the AR content
+function loadModelAndShowAR(modelUrl) {
+    const arContent = document.getElementById('ar-content');
+    const arSceneContainer = document.getElementById('ar-scene-container');
+    const arCamera = document.getElementById('ar-camera');
+    const arOverlay = document.getElementById('ar-overlay');
+    const productContainer = document.getElementById('product-container');
+    const footer = document.querySelector('footer');
 
-  // Hide the entire website content
-  body.style.display = 'none';
+    // Remove existing models
+    const existingModels = arContent.querySelectorAll('a-entity');
+    existingModels.forEach(model => model.parentNode.removeChild(model));
 
-  // Remove existing models
-  const existingModels = arContent.querySelectorAll('a-entity');
-  existingModels.forEach(model => model.parentNode.removeChild(model));
+    // Add new model
+    const model = document.createElement('a-entity');
+    model.setAttribute('gltf-model', modelUrl);
+    model.setAttribute('scale', '0.1 0.1 0.1'); // Sesuaikan skala model sesuai kebutuhan
+    model.setAttribute('position', '0 0 -5'); // Sesuaikan posisi model sesuai kebutuhan
+    arContent.appendChild(model);
 
-  // Add new model
-  const model = document.createElement('a-entity');
-  model.setAttribute('gltf-model', modelUrl);
-  model.setAttribute('scale', '1 1 1'); // Sesuaikan skala model sesuai kebutuhan
-  model.setAttribute('position', '0 0 -5'); // Sesuaikan posisi model sesuai kebutuhan
-  arContent.appendChild(model);
+    // Hide the entire website content
+    productContainer.style.display = 'none';
+    footer.style.display = 'none';
 
-  // Show the AR overlay
-  arOverlay.style.display = 'block';
+    // Show the AR scene and hide the button overlay
+    arSceneContainer.style.display = 'block';
+    arCamera.setAttribute('camera', 'active', true); // Activate the AR camera
+    arOverlay.style.display = 'block';
 }
 
-// Function to hide the AR content and show the entire website
+// Function to hide the AR content and show the website
 function hideAR() {
-  const arContent = document.getElementById('ar-content');
-  const arOverlay = document.getElementById('ar-overlay');
-  const body = document.body;
+    const arContent = document.getElementById('ar-content');
+    const arSceneContainer = document.getElementById('ar-scene-container');
+    const arCamera = document.getElementById('ar-camera');
+    const arOverlay = document.getElementById('ar-overlay');
+    const productContainer = document.getElementById('product-container');
+    const footer = document.querySelector('footer');
 
-  // Show the entire website content
-  body.style.display = 'block';
+    // Remove existing models
+    const existingModels = arContent.querySelectorAll('a-entity');
+    existingModels.forEach(model => model.parentNode.removeChild(model));
 
-  // Remove existing models
-  const existingModels = arContent.querySelectorAll('a-entity');
-  existingModels.forEach(model => model.parentNode.removeChild(model));
+    // Show the entire website content
+    productContainer.style.display = 'block';
+    footer.style.display = 'block';
 
-  // Hide the AR overlay
-  arOverlay.style.display = 'none';
+    // Hide the AR scene and show the button overlay
+    arSceneContainer.style.display = 'none';
+    arCamera.setAttribute('camera', 'active', false); // Deactivate the AR camera
+    arOverlay.style.display = 'none';
 }
-  
-  
+
+// Function to initialize the AR scene and disable the camera
+function initARScene() {
+    const arSceneContainer = document.getElementById('ar-scene-container');
+    const arOverlay = document.getElementById('ar-overlay');
+
+    // Hide the AR scene and button overlay by default
+    arSceneContainer.style.display = 'none';
+    arOverlay.style.display = 'none';
+
+    // Function to hide the AR camera
+function hideARCamera() {
+    const arCamera = document.getElementById('ar-camera');
+    arCamera.setAttribute('camera', 'active', false); // Deactivate the AR camera
+}
+}
+
+
+
+// Call the initARScene function to initialize the AR scene when the page loads
+initARScene();
