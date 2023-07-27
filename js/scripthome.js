@@ -59,6 +59,12 @@ function redirectToWhatsApp(whatsappNumber, productName) {
 // Fungsi untuk menampilkan model 3D dalam AR saat tombol "Show In 3D" ditekan
 function showAR(modelUrl) {
     const arContent = document.getElementById('ar-content');
+  
+    // Remove existing models
+    const existingModels = arContent.querySelectorAll('a-entity');
+    existingModels.forEach(model => model.parentNode.removeChild(model));
+  
+    // Add new model
     const model = document.createElement('a-entity');
     model.setAttribute('gltf-model', modelUrl);
     model.setAttribute('scale', '0.1 0.1 0.1'); // Sesuaikan skala model sesuai kebutuhan
