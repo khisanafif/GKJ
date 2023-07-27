@@ -56,49 +56,45 @@ function redirectToWhatsApp(whatsappNumber, productName) {
     window.open(whatsappURL, '_blank');
 }
 
-// Function to show the AR content and hide other elements
+// Function to show the AR content and hide the website
 function showAR(modelUrl) {
-    const arContent = document.getElementById('ar-content');
-    const arOverlay = document.getElementById('ar-overlay');
-    const productContainer = document.getElementById('product-container');
-    const footer = document.querySelector('footer');
-  
-    // Hide other elements
-    productContainer.style.display = 'none';
-    footer.style.display = 'none';
-  
-    // Remove existing models
-    const existingModels = arContent.querySelectorAll('a-entity');
-    existingModels.forEach(model => model.parentNode.removeChild(model));
-  
-    // Add new model
-    const model = document.createElement('a-entity');
-    model.setAttribute('gltf-model', modelUrl);
-    model.setAttribute('scale', '0.1 0.1 0.1'); // Sesuaikan skala model sesuai kebutuhan
-    model.setAttribute('position', '0 0 -5'); // Sesuaikan posisi model sesuai kebutuhan
-    arContent.appendChild(model);
-  
-    // Show the AR overlay
-    arOverlay.style.display = 'block';
-  }
-  
-  // Function to hide the AR content and show other elements
-  function hideAR() {
-    const arContent = document.getElementById('ar-content');
-    const arOverlay = document.getElementById('ar-overlay');
-    const productContainer = document.getElementById('product-container');
-    const footer = document.querySelector('footer');
-  
-    // Hide the AR overlay
-    arOverlay.style.display = 'none';
-  
-    // Remove existing models
-    const existingModels = arContent.querySelectorAll('a-entity');
-    existingModels.forEach(model => model.parentNode.removeChild(model));
-  
-    // Show other elements
-    productContainer.style.display = 'block';
-    footer.style.display = 'block';
-  }
+  const arContent = document.getElementById('ar-content');
+  const arOverlay = document.getElementById('ar-overlay');
+  const body = document.body;
+
+  // Hide the entire website content
+  body.style.display = 'none';
+
+  // Remove existing models
+  const existingModels = arContent.querySelectorAll('a-entity');
+  existingModels.forEach(model => model.parentNode.removeChild(model));
+
+  // Add new model
+  const model = document.createElement('a-entity');
+  model.setAttribute('gltf-model', modelUrl);
+  model.setAttribute('scale', '1 1 1'); // Sesuaikan skala model sesuai kebutuhan
+  model.setAttribute('position', '0 0 -5'); // Sesuaikan posisi model sesuai kebutuhan
+  arContent.appendChild(model);
+
+  // Show the AR overlay
+  arOverlay.style.display = 'block';
+}
+
+// Function to hide the AR content and show the entire website
+function hideAR() {
+  const arContent = document.getElementById('ar-content');
+  const arOverlay = document.getElementById('ar-overlay');
+  const body = document.body;
+
+  // Show the entire website content
+  body.style.display = 'block';
+
+  // Remove existing models
+  const existingModels = arContent.querySelectorAll('a-entity');
+  existingModels.forEach(model => model.parentNode.removeChild(model));
+
+  // Hide the AR overlay
+  arOverlay.style.display = 'none';
+}
   
   

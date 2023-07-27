@@ -187,6 +187,7 @@
     </div>
   
   <!-- Akhir Produk -->
+  
   <!-- A-Frame Scene for AR -->
   <a-scene embedded arjs>
     <!-- Content to display in AR when markerless AR is activated -->
@@ -194,12 +195,14 @@
       <!-- Add your virtual content here -->
     </a-entity>
 
+    <!-- AR Overlay -->
+    <div id="ar-overlay">
+      <button class="hide-ar-button" onclick="hideAR()">Hide AR</button>
+    </div>
+
     <!-- Camera for AR -->
     <a-entity camera></a-entity>
   </a-scene>
-  <!-- AR Overlay to cover the entire screen -->
-  <div id="ar-overlay"></div>
-</a-scene>
 
 
   <!-- Footer -->
