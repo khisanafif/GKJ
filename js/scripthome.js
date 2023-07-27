@@ -56,15 +56,13 @@ function redirectToWhatsApp(whatsappNumber, productName) {
     window.open(whatsappURL, '_blank');
 }
 
-// Fungsi untuk menampilkan model 3D saat tombol "Show In 3D" ditekan
 // Fungsi untuk menampilkan model 3D dalam AR saat tombol "Show In 3D" ditekan
 function showAR(modelUrl) {
-    const arScene = document.querySelector('a-scene');
-  
+    const arContent = document.getElementById('ar-content');
     const model = document.createElement('a-entity');
     model.setAttribute('gltf-model', modelUrl);
     model.setAttribute('scale', '0.1 0.1 0.1'); // Sesuaikan skala model sesuai kebutuhan
     model.setAttribute('position', '0 0 -5'); // Sesuaikan posisi model sesuai kebutuhan
-  
-    arScene.appendChild(model);
+    arContent.appendChild(model);
   }
+  

@@ -190,14 +190,16 @@
   <!-- Akhir Produk -->
   <!-- A-Frame Scene for AR -->
   <a-scene embedded arjs>
-    <!-- Marker untuk mengenali permukaan (gunakan marker hiro) -->
-    <a-marker preset="hiro">
-      <!-- Konten augmented reality akan ditampilkan di sini -->
-    </a-marker>
+    <!-- Content to display in AR when markerless AR is activated -->
+    <a-entity id="ar-content">
+      <!-- Add your virtual content here -->
+    </a-entity>
 
-    <!-- Kamera AR -->
+    <!-- Camera for AR -->
     <a-entity camera></a-entity>
   </a-scene>
+
+
   <!-- Footer -->
   <footer class=" bg-dark text-white text-center pb-3 mt-5">
     <div class="row mt-5">
@@ -229,8 +231,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   -->
   <!-- Script untuk mengambil model 3D saat tombol "Show AR" ditekan -->
-  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="js/scripthome.js"></script>
 </body>
 </html>
