@@ -11,8 +11,10 @@
   <!-- Bootstrap Icon -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-   <!-- A-Frame Library -->
-   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <!-- A-Frame Library -->
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <title>GK Jember</title>
 </head>
@@ -201,24 +203,6 @@
     </div>
   </footer>
     <!-- Akhir Footer-->
-
-    <!-- Script untuk mode AR -->
-    <script>
-      function showInAR() {
-        // Tambahkan elemen a-scene dan gunakan a-entity untuk menampilkan model 3D AR
-        var scene = document.createElement("a-scene");
-        var model = document.createElement("a-entity");
-        model.setAttribute("gltf-model", "url(../assets/produk/model1.glb)");
-  
-        // Atur posisi, rotasi, dan skala model sesuai kebutuhan
-        model.setAttribute("position", "0 0 -5");
-        model.setAttribute("rotation", "0 180 0");
-        model.setAttribute("scale", "0.2 0.2 0.2");
-  
-        scene.appendChild(model);
-        document.body.appendChild(scene);
-      }
-    </script>
   <!-- Optional JavaScript; choose one of the two! -->
 
 

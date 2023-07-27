@@ -56,33 +56,15 @@ function redirectToWhatsApp(whatsappNumber, productName) {
     window.open(whatsappURL, '_blank');
 }
 
-// Fungsi untuk menampilkan model 3D saat tombol "Show AR" ditekan
-function loadModel(modelUrl) {
-    const canvasContainer = document.getElementById('canvas-container');
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, canvasContainer.clientWidth / canvasContainer.clientHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(canvasContainer.clientWidth, canvasContainer.clientHeight);
-    canvasContainer.appendChild(renderer.domElement);
-
-    const loader = new THREE.GLTFLoader();
-    loader.load(
-        modelUrl,
-        function (gltf) {
-            scene.add(gltf.scene);
-        },
-        undefined,
-        function (error) {
-            console.error('Error loading 3D model:', error);
-        }
-    );
-
-    camera.position.z = 5;
-
-    const animate = function () {
-        requestAnimationFrame(animate);
-        renderer.render(scene, camera);
-    };
-
-    animate();
-}
+// Fungsi untuk menampilkan model 3D saat tombol "Show In 3D" ditekan
+// Fungsi untuk menampilkan model 3D dalam AR saat tombol "Show In 3D" ditekan
+function showAR(modelUrl) {
+    const arScene = document.querySelector('a-scene');
+  
+    const model = document.createElement('a-entity');
+    model.setAttribute('gltf-model', modelUrl);
+    model.setAttribute('scale', '0.1 0.1 0.1'); // Sesuaikan skala model sesuai kebutuhan
+    model.setAttribute('position', '0 0 -5'); // Sesuaikan posisi model sesuai kebutuhan
+  
+    arScene.appendChild(model);
+  }
