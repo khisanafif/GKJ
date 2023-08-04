@@ -1,25 +1,25 @@
 // Daftar produk
 const products = [
     {
-        name: 'Produk 1',
+        name: 'Keranjang Tutup',
         arModel: 'assets/produk/product1.glb',
         img: 'assets/produk/produk1.jpg',
         whatsappNumber: '6281230670853' // Ganti dengan nomor WhatsApp yang sesuai
     },
     {
-        name: 'Produk 2',
+        name: 'Tas Bundar',
         arModel: 'assets/produk/product2.glb',
         img: 'assets/produk/produk2.jpg',
         whatsappNumber: '6281230670853' // Ganti dengan nomor WhatsApp yang sesuai
     },
     {
-        name: 'Produk 3',
+        name: 'Tas Gagang Panjang',
         arModel: 'assets/produk/product3.glb',
         img: 'assets/produk/produk3.jpg',
         whatsappNumber: '6281230670853' // Ganti dengan nomor WhatsApp yang sesuai
     },
     {
-        name: 'Produk 4',
+        name: 'Tas Kotak Berkatan',
         arModel: 'assets/produk/product4.glb',
         img: 'assets/produk/produk4.jpg',
         whatsappNumber: '6281230670853' // Ganti dengan nomor WhatsApp yang sesuai
