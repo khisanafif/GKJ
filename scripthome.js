@@ -2,26 +2,26 @@
 const products = [
     {
         name: 'Produk 1',
-        arModel: '../assets/produk/product1.glb',
-        img: '../assets/produk/produk1.jpg',
+        arModel: 'assets/produk/product1.glb',
+        img: 'assets/produk/produk1.jpg',
         whatsappNumber: '6281230670853' // Ganti dengan nomor WhatsApp yang sesuai
     },
     {
         name: 'Produk 2',
-        arModel: '../assets/produk/product2.glb',
-        img: '../assets/produk/produk2.jpg',
+        arModel: 'assets/produk/product2.glb',
+        img: 'assets/produk/produk2.jpg',
         whatsappNumber: '6281230670853' // Ganti dengan nomor WhatsApp yang sesuai
     },
     {
         name: 'Produk 3',
-        arModel: '../assets/produk/product3.glb',
-        img: '../assets/produk/produk3.jpg',
+        arModel: 'assets/produk/product3.glb',
+        img: 'assets/produk/produk3.jpg',
         whatsappNumber: '6281230670853' // Ganti dengan nomor WhatsApp yang sesuai
     },
     {
         name: 'Produk 4',
-        arModel: '../assets/produk/product4.glb',
-        img: '../assets/produk/produk4.jpg',
+        arModel: 'assets/produk/product4.glb',
+        img: 'assets/produk/produk4.jpg',
         whatsappNumber: '6281230670853' // Ganti dengan nomor WhatsApp yang sesuai
     }
     // Tambahkan produk lain sesuai kebutuhan
@@ -54,4 +54,17 @@ function redirectToWhatsApp(whatsappNumber, productName) {
     const encodedMessage = encodeURIComponent(`Halo, Saya tertarik dengan ${productName}. Apakah masih tersedia?`);
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     window.open(whatsappURL, '_blank');
+}
+
+// Fungsi untuk memuat model 3D dan menampilkan AR
+function loadModelAndShowAR(arModelPath) {
+    // Dapatkan indeks produk dalam array berdasarkan arModelPath
+    const index = products.findIndex((product) => product.arModel === arModelPath);
+
+    if (index !== -1) {
+        // Jika produk ditemukan dalam array, alihkan ke halaman produk yang sesuai
+        window.location.href = `product${index + 1}.html`;
+    } else {
+        console.error('Produk tidak ditemukan.');
+    }
 }
