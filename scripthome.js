@@ -41,7 +41,7 @@ products.forEach(product => {
             <img src="${product.img}" alt="${product.name}" class="product-image" />
             <div class="hover-overlay">
                 <button class="ar-button" onclick="loadModelAndShowAR('${product.arModel}')">Show In 3D</button>
-                <button class="buy-button" onclick="redirectToWhatsApp('${product.whatsappNumber}', '${product.name}')">Beli</button>
+                <button class="buy-button" onclick="redirectToWhatsApp('6285746807778', '${product.name}')">Beli</button>
             </div>
         </div>
     `;

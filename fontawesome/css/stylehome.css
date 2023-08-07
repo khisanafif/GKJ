@@ -135,8 +135,9 @@ section{
     cursor: pointer;
   }
   
-  
-
+  .card{
+    height: 400px;
+  }
   
 
   
