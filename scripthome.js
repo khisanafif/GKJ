@@ -13,7 +13,7 @@ const products = [
         whatsappNumber: '6285746807778' // Ganti dengan nomor WhatsApp yang sesuai
     },
     {
-        name: 'Tas Gagang Panjang',
+        name: 'Tas Samping Besar',
         arModel: 'assets/produk/product3.glb',
         img: 'assets/produk/produk3.jpg',
         whatsappNumber: '6285746807778' // Ganti dengan nomor WhatsApp yang sesuai
