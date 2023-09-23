@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babylon.js Example</title>
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+</head>
+<body>
+    <canvas id="renderCanvas"></canvas>
+    <script>
+        // Ambil elemen canvas
+        var canvas = document.getElementById("renderCanvas");
+
+        // Inisialisasi mesin render Babylon.js
+        var engine = new BABYLON.Engine(canvas, true);
+
+        // Membuat fungsi createScene untuk menginisialisasi skenario atau model 3D Anda
+        var createScene = function () {
+            var scene = new BABYLON.Scene(engine);
+
+            // Membuat kamera
+            var camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2, 5, BABYLON.Vector3.Zero(), scene);
+
+            // Membuat cahaya
+            var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
+
+            // Memuat model .babylon
+            BABYLON.SceneLoader.Append("media/gltf/produk", "product1.babylon", scene, function () {
+                // Model telah dimuat, Anda dapat menambahkan logika tambahan di sini
+            });
+
+            return scene;
+        };
+
+        var scene = createScene();
+
+        // Fungsi render loop
+        engine.runRenderLoop(function () {
+            scene.render();
+        });
+
+        // Penanganan perubahan ukuran jendela
+        window.addEventListener("resize", function () {
+            engine.resize();
+        });
+    </script>
+</body>
+</html>

@@ -7,7 +7,7 @@ const products = [
         whatsappNumber: '6285746807778' // Ganti dengan nomor WhatsApp yang sesuai
     },
     {
-        name: 'Tas Bundar',
+        name: 'Tas Berkatan',
         arModel: 'assets/produk/product2.glb',
         img: 'assets/produk/produk2.jpg',
         whatsappNumber: '6285746807778' // Ganti dengan nomor WhatsApp yang sesuai
@@ -19,7 +19,7 @@ const products = [
         whatsappNumber: '6285746807778' // Ganti dengan nomor WhatsApp yang sesuai
     },
     {
-        name: 'Tas Kotak Berkatan',
+        name: 'Tas ',
         arModel: 'assets/produk/product4.glb',
         img: 'assets/produk/produk4.jpg',
         whatsappNumber: '6285746807778' // Ganti dengan nomor WhatsApp yang sesuai
