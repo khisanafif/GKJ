@@ -14,7 +14,7 @@ try {
 
     if ($_SERVER["REQUEST_METHOD"] === "GET") {
         // Jika metode permintaan adalah GET, ambil komentar dari database
-        $query = "SELECT * FROM comments ORDER BY created_at DESC";
+        $query = "SELECT * FROM 'comments' ORDER BY created_at DESC";
         $stmt = $conn->query($query);
 
         $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -38,7 +38,13 @@ try {
         }
 
         // Query untuk menambahkan komentar baru ke tabel
-        $query = "INSERT INTO comments (name, comment) VALUES (:name, :comment)";
+        $query = "INSERT INTO 'comments' (name, comment) VALUES ('$name', '$comment')";
+
+        if ($conn->query($query) === TRUE) {
+            echo "Komentar berhasil ditambahkan ke database.";
+        } else {
+            echo "Gagal menambahkan komentar: " . $conn->error;
+        }
         $stmt = $conn->prepare($query);
         $stmt->bindParam(":name", $name);
         $stmt->bindParam(":comment", $comment);
@@ -55,4 +61,8 @@ try {
 } catch (PDOException $e) {
     echo "Koneksi ke database gagal: " . $e->getMessage();
 }
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 ?>

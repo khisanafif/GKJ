@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="fontawesome/css/stylehome.css">
+  <!-- Bootstrap Icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <link rel='icon' type='image/png' sizes='32x32' href='../assets/logo.png'>
+  <link rel='icon' type='image/png' sizes='96x96' href='../assets/logo.png'>
+
+
+  <title>GK Jember</title>
+</head>
+<body>
+  <!-- Navbar-->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="../assets/logo.png" alt="" height="70" class="d-inline-block ">
+          GK  <strong>Jember</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <form class="d-flex ms-auto">
+            
+           
+        </form>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/koleksi.html">Koleksi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/dokumentasi.html">Dokumentasi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/komentar.html">Komentar</a>
+          </li>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Akhir Navbar -->
+
+  <!-- Carousel -->
+  <div class="container mt-5">
+    <section id="carousel mt-5">
+      <div id="carouselExampleCaptions " class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../assets/img1.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Ubah Gaya dengan Sentuhan Tradisi</h5>
+              <p>Beli Tas Anyaman GK Jember!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../assets/img2.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Keindahan Anyaman Nusantara</h5>
+              <p> Dapatkan Tas Anyaman GK Jember Spesial Anda!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../assets/img3.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Tas Anyaman GK Jember</h5>
+              <p>Pilihan untuk Fashion dan Budaya Indonesia</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+  </div>
+  <!-- Akhir Carousel -->
+  <!-- Special Offer-->
+  <div class="container mt-5">
+    <div class="judul-produk" style="background-color: #FFF; padding: 5px 10px;">
+      <h4 class="text-center" style="margin-top: 10px;">Special Offer</h4>
+            </div>
+            <div class="row text-center row-container mt-2">
+              <div id="product-container" class="product-container mt-5  ">
+                <!-- Daftar produk akan ditambahkan melalui JavaScript -->
+            </div>
+            </div>
+        </div>
+
+    <!-- Akhir Special Offer-->
+
+  <!--  About-->
+  <section id="about">
+      <div class="container">
+          <div class="row text-center mb-4">
+              <div class="col">
+                  <h2>About GK Jember</h2>
+              </div>
+          </div>
+          <div class="row justify-content-center  fs-5  mb-5">
+              <div class="col-4">
+                  <p>Gerai anyaman gumuk kembar merupakan UMKM yang bergerak dalam bidang kerajinan anyaman yang berdiri sejak tahun 2015. </p>
+              </div>
+              <div class="col-4">
+                  <p>Gerai anyaman GK berlokasi di dusun Gumuk Kembar, Desa Sidorejo, Kecamatan Umbulsari, Kabupaten Jember, Provinsi Jawa Timur, Indonesia.</p>
+              </div>
+              <div class="col-4">
+                  <p>Kini gerai anyaman telah memiliki 15 karyawan yang mengakomodasi masyarakat sekitar. Dengan belanja disini, secara tidak langsung anda juga berkontribusi sebagai penggerak ekonomi masyarakat desa</p>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- Akhir About-->
+  
+
+  <!-- Footer -->
+  <footer class=" bg-dark text-white text-center pb-3 mt-5">
+    <div class="row mt-5">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 mt-5 ">
+        <p><i class="bi bi-instagram"></i><a href="https://www.instagram.com/pkmpi_geraianyaman" class="text-white fw-bold">  pkmpi_geraianyaman</a></p>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 mt-5 ">
+        <p><i class="bi bi-youtube"></i></i><a href="https://youtube.com/@geraikerajinananyaman" class="text-white fw-bold">  geraikerajinananyaman</a></p>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 mt-2 ">
+        <p><i class="bi bi-tiktok"></i><a href="https://www.tiktok.com/@pengrajin_anyaman01" class="text-white fw-bold">  pengrajin_anyaman01</a></p>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 mt-2 ">
+        <p><i class="bi bi-facebook"></i></i><a href="https://www.facebook.com/profile.php?id=100094547798550&sk=about" class="text-white fw-bold">  Gerai Anyaman</a></p>
+      </div>
+    </div>
+  </footer>
+    <!-- Akhir Footer-->
+  <!-- Optional JavaScript; choose one of the two! -->
+
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  -->
+  <!-- Script untuk mengambil model 3D saat tombol "Show AR" ditekan -->
+  <script src="scripthome.js"></script>
+</body>
+</html>
